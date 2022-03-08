@@ -23,3 +23,4 @@ Gig.sync().then(() => {
   console.log('table created');
 });
 module.exports = Gig;
+
