@@ -41,7 +41,7 @@ You can also download the files into a .zip directly from the GitHub repository:
 ![screenshot of the site's hero section]
 
 ## Contribution
-Edited by Amari, Sara, Robert, and Nate
+Edited by Brandon,Sara,and Karaun
 
 ## License
 
