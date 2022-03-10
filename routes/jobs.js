@@ -7,16 +7,16 @@ const Op = Sequelize.Op;
 
 // Get job list
 router.get('/', (req, res) => 
-  Gig.findAll()
-    .then(gigs => res.render('jobs', {
-        gigs
+  Job.findAll()
+    .then(jobs => res.render('jobs', {
+        jobs
       }))
     .catch(err => res.render('error', {error: err})));
 
 // Display add gig form
 router.get('/add', (req, res) => res.render('add'));
 
-// Add a gig
+// Add a job
 router.post('/add', (req, res) => {
   let { title, technologies, budget, description, contact_email } = req.body;
   let errors = [];
