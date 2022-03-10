@@ -13,7 +13,7 @@ router.get('/', (req, res) =>
       }))
     .catch(err => res.render('error', {error: err})));
 
-// Display add gig form
+// Display add job form
 router.get('/add', (req, res) => res.render('add'));
 
 // Add a job
