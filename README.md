@@ -2,7 +2,7 @@
 
 ## Purpose
 
-SPARTAN SEARCH is a platform for bootcamp graduates who are looking to obtain employment and apply thier skills to thier new career. 
+SPARTAN SEARCH is a platform for bootcamp graduates who are looking to obtain employment and apply thier skills to their new career. 
 
 ## Table of Contents
 - [Built With](#built-with)
@@ -41,7 +41,7 @@ You can also download the files into a .zip directly from the GitHub repository:
 ![screenshot of the site's hero section]
 
 ## Contribution
-Edited by Brandon,Sara,and Karaun
+Edited by Brandon,Sara,Teresa and Karaun
 
 ## License
 
