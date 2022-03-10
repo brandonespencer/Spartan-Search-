@@ -1,26 +1,50 @@
-const Sequelize = require('sequelize');
-const db = require('../config/database');
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
-const Gig = db.define('gig', {
-  title: {
-    type: Sequelize.STRING
+class Post extends Model {}
+
+Post.init(
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    technology: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    description: {
+        type: DataTypes.TEXT,
+        allowNull: true
+    },
+    salary: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    contact_email: {
+      type: DataTypes.STRING,
+      allownull: true
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id'
+      }
+    }
   },
-  technologies: {
-    type: Sequelize.STRING
-  },
-  description: {
-    type: Sequelize.STRING
-  },
-  budget: {
-    type: Sequelize.STRING
-  },
-  contact_email: {
-    type: Sequelize.STRING
+  {
+    sequelize,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'post'
   }
-});
+);
 
-Gig.sync().then(() => {
-  console.log('table created');
-});
-module.exports = Gig;
-
+module.exports = Post;
