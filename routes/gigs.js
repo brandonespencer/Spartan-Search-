@@ -1,14 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../config/database');
-const Gig = require('../models/Gig');
+const Job = require('../models/job');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
-// Get gig list
+// Get job list
 router.get('/', (req, res) => 
   Gig.findAll()
-    .then(gigs => res.render('gigs', {
+    .then(gigs => res.render('jobs', {
         gigs
       }))
     .catch(err => res.render('error', {error: err})));
@@ -47,36 +47,36 @@ router.post('/add', (req, res) => {
     });
   } else {
     if(!budget) {
-      budget = 'Unknown';
+      salary = 'Unknown';
     } else {
-      budget = `$${budget}`;
+      salary = `$${salary}`;
     }
 
     // Make lowercase and remove space after comma
     technologies = technologies.toLowerCase().replace(/,[ ]+/g, ',');
 
     // Insert into table
-    Gig.create({
+    job.create({
       title,
       technologies,
       description,
       budget,
       contact_email
     })
-      .then(gig => res.redirect('/gigs'))
+      .then(job => res.redirect('/jobs'))
       .catch(err => res.render('error', {error:err.message}))
   }
 });
 
-// Search for gigs
+// Search for jobs
 router.get('/search', (req, res) => {
   let { term } = req.query;
 
   // Make lowercase
   term = term.toLowerCase();
 
-  Gig.findAll({ where: { technologies: { [Op.like]: '%' + term + '%' } } })
-    .then(gigs => res.render('gigs', { gigs }))
+  job.findAll({ where: { technologies: { [Op.like]: '%' + term + '%' } } })
+    .then(jobs => res.render('jobs', { jobs }))
     .catch(err => res.render('error', {error: err}));
 });
 
