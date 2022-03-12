@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "db:seed": "./node_modules/.bin/db_seed"
+    "seed": "node seed.js"
   },
   "author": "sparten search",
   "license": "MIT",
@@ -21,6 +21,7 @@
     "sequelize": "^4.44.3"
   },
   "devDependencies": {
+    "db-seed": "^1.2.0",
     "nodemon": "^1.18.8"
   }
 }
