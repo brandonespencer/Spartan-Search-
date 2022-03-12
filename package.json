@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "db:seed": "./node_modules/.bin/db_seed"
   },
   "author": "sparten search",
   "license": "MIT",
@@ -16,6 +17,7 @@
     "mysql2": "^2.3.3",
     "pg": "^7.7.1",
     "pg-hstore": "^2.3.2",
+    "run": "^1.4.0",
     "sequelize": "^4.44.3"
   },
   "devDependencies": {
