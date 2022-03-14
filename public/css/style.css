@@ -311,4 +311,6 @@ label {
   width: 30%;
   height: 100px;
   overflow-y: scroll;
+  color: #fff;
+  background: url(../img/showcase1.jpg);
 }
